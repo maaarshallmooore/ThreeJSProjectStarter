@@ -14,7 +14,7 @@ export default (() => {
     Sizes.init(canvasWrap);
     canvas = document.createElement("canvas");
     canvasWrap.appendChild(canvas);
-    renderer = new THREE.WebGPURenderer({
+    renderer = new THREE.WebGLRenderer({
       canvas: canvas,
       antialias: true,
     });
