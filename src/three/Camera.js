@@ -4,10 +4,13 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import Experience from "./Experience.js";
 import Renderer from "./Renderer.js";
 import Sizes from "./utils/Sizes.js";
+import PubSub from "./utils/PubSub.js";
 
 export default (() => {
   let camera = null;
   let controls = null;
+
+  PubSub.subscribe("resize", resize);
 
   function init() {
     camera = new THREE.PerspectiveCamera(35, Sizes.getAspectRatio(), 0.1, 100);
